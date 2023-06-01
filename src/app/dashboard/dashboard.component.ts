@@ -54,7 +54,7 @@ export class DashboardComponent implements OnInit {
 
   fetchGameState(): void {
     // Make an HTTP GET request to the API endpoint
-    this.http.get<GameState>('https://localhost:7124/GameState/Get')
+    this.http.get<GameState>('https://pras-th-api.azurewebsites.net/GameState/Get')
       .subscribe(data => {
         // Update the gameData property with the fetched data
         this.gameData = data;
