@@ -1,0 +1,21 @@
+.dashboard {
+    padding: 20px;
+  }
+  
+  .game-info {
+    margin-bottom: 20px;
+  }
+  
+  .team-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .team-card {
+    flex-basis: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
