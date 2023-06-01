@@ -19,9 +19,15 @@
       <p><strong>Current Checkpoint Index:</strong> {{ team.value.curCheckPointIndex }}</p>
       <p><strong>Score Transaction:</strong></p>
       <ul>
-        <li *ngFor="let transaction of team.value.scoreTransaction">
-          {{ transaction }}
-        </li>
+        <ng-container *ngFor="let transaction of team.value.scoreTransaction; let rowIndex = index">
+          <div class="row" [ngClass]="{'highlight': rowIndex === team.value.curCheckPointIndex}">
+            <div class="arrow" *ngIf="rowIndex === team.value.curCheckPointIndex"></div>
+            <div class="row-number">{{ rowIndex + 1 }}</div>
+            <div class="circle" *ngFor="let value of transaction" [ngClass]="{'positive': value > 0, 'negative': value < 0}">
+              {{ value }}
+            </div>
+          </div>
+        </ng-container>
       </ul>
     </div>
   </div>

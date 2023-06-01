@@ -18,4 +18,54 @@
     border-radius: 5px;
     background-color: #f9f9f9;
   }
+
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Add margin-bottom for spacing between rows */
+  }
   
+  .row-number {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
+    position: relative; /* Add position: relative to the highlighted row */
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: -20px; /* Adjust the distance of the arrow from the right side */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid blue; /* Set the color of the arrow to blue */
+  }
+
+  
+  .circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 5px;
+  }
+  
+  .positive {
+    background-color: green;
+    color: white;
+  }
+  
+  .negative {
+    background-color: red;
+    color: white;
+  }
