@@ -7,11 +7,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
