@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GameState } from '../models/state';
 import { HttpClient } from '@angular/common/http';
 import { interval } from 'rxjs';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -39,7 +41,7 @@ export class DashboardComponent implements OnInit {
     }
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     // Fetch the game data initially
@@ -56,6 +58,14 @@ export class DashboardComponent implements OnInit {
     // Make an HTTP GET request to the API endpoint
     this.http.get<GameState>('https://pras-th-api.azurewebsites.net/GameState/Get')
       .subscribe(data => {
+
+        // Format the date values using DatePipe
+        data.updatedAt = this.datePipe.transform(data.updatedAt, 'yyyy-MM-dd HH:mm:ss');
+        data.startedAt = this.datePipe.transform(data.startedAt, 'yyyy-MM-dd HH:mm:ss');
+        data.teamWiseGameState.TeamA.finishedAt = this.datePipe.transform(data.teamWiseGameState.TeamA.finishedAt, 'yyyy-MM-dd HH:mm:ss');
+        data.teamWiseGameState.TeamB.finishedAt = this.datePipe.transform(data.teamWiseGameState.TeamB.finishedAt, 'yyyy-MM-dd HH:mm:ss');
+
+
         // Update the gameData property with the fetched data
         this.gameData = data;
       });

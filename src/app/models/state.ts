@@ -8,10 +8,10 @@ export interface TeamGameState {
 export interface GameState {
     id: string;
     gameDataId: string;
-    updatedAt: string;
+    updatedAt: string | null;
     gameName: string;
     gameCode: string;
-    startedAt: string;
+    startedAt: string | null;
     isGameOver: boolean;
     totalNumberOfCheckPoints: number;
     teamWiseGameState: {
