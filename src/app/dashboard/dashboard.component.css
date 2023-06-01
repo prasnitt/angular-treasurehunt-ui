@@ -17,6 +17,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+    
   }
 
   .row {
@@ -49,15 +50,35 @@
     border-left: 10px solid blue; /* Set the color of the arrow to blue */
   }
 
-  
+  .current-score-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .current-score {
+    position: relative;
+    font-size: 50px;
+    background-image: url('/assets/star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+  }
   .circle {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     text-align: center;
-    line-height: 30px;
+    line-height: 40px;
     margin-right: 5px;
+    font-size: 30px;
   }
   
   .positive {

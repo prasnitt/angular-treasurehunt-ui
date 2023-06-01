@@ -2,7 +2,6 @@
   <h2>Game Dashboard</h2>
 
   <div class="game-info">
-    <p><strong>ID:</strong> {{ gameData.id }}</p>
     <p><strong>Game Name:</strong> {{ gameData.gameName }}</p>
     <p><strong>Game Code:</strong> {{ gameData.gameCode }}</p>
     <p><strong>Started At:</strong> {{ gameData.startedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
@@ -14,7 +13,9 @@
   <div class="team-info">
     <div class="team-card" *ngFor="let team of gameData.teamWiseGameState | keyvalue">
       <h3>{{ team.key }}</h3>
-      <p><strong>Current Score:</strong> {{ team.value.currentScore }}</p>
+      <div class="current-score-container">
+        <div class="current-score">{{ team.value.currentScore }}</div>
+      </div>
       <p><strong>Finished At:</strong> {{ team.value.finishedAt | date:'yyyy-MM-dd HH:mm:ss' || 'N/A' }}</p>
       <p><strong>Current Checkpoint Index:</strong> {{ team.value.curCheckPointIndex }}</p>
       <p><strong>Score Transaction:</strong></p>
