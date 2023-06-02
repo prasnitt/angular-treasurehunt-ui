@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
     updatedAt: "",
     gameName: "",
     gameCode: "",
+    isGameStarted: false,
     startedAt: "",
     isGameOver: false,
     totalNumberOfCheckPoints: 0,
