@@ -11,6 +11,7 @@ export interface GameState {
     updatedAt: string | null;
     gameName: string;
     gameCode: string;
+    isGameStarted: boolean;
     startedAt: string | null;
     isGameOver: boolean;
     totalNumberOfCheckPoints: number;
