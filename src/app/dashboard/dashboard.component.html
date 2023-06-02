@@ -1,5 +1,8 @@
 <div class="dashboard">
   <h2>Game Dashboard</h2>
+  <div *ngIf="!gameData.isGameStarted" class="top-image-overlay">
+    <img src="assets/img/game-not-started.jpg" alt="Game not started" class="top-image">
+  </div>
 
   <div class="dashboard-header">
       <div class="game-info">
@@ -12,6 +15,7 @@
       <div class="image-container">
         <img src="assets/img/treasure_hunt_home.jpg" alt="Image" class="dashboard-image">
       </div>
+      
   </div>
   
 
