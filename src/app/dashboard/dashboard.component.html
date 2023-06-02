@@ -1,14 +1,17 @@
 <div class="dashboard">
   <h2>Game Dashboard</h2>
 
-  <div class="game-info">
-    <p><strong>Game Name:</strong> {{ gameData.gameName }}</p>
-    <p><strong>Game Code:</strong> {{ gameData.gameCode }}</p>
-    <p><strong>Started At:</strong> {{ gameData.startedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
-    <p><strong>Is Game Over:</strong> {{ gameData.isGameOver }}</p>
-    <p><strong>Total Number of Checkpoints:</strong> {{ gameData.totalNumberOfCheckPoints }}</p>
-    <p><strong>Updated At:</strong> {{ gameData.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+  <div class="dashboard-header">
+      <div class="game-info">
+        <p><strong>Game Name:</strong> {{ gameData.gameName }}</p>
+        <p><strong>Game Code:</strong> {{ gameData.gameCode }}</p>
+        <p><strong>Started At:</strong> {{ gameData.startedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+        <p><strong>Total Number of Checkpoints:</strong> {{ gameData.totalNumberOfCheckPoints }}</p>
+        <p><strong>Updated At:</strong> {{ gameData.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+      </div>
+      <img src="assets/img/treasure_hunt_home.jpg" alt="Image" class="dashboard-image">
   </div>
+  
 
   <div class="team-info">
     <div class="team-card" *ngFor="let team of gameData.teamWiseGameState | keyvalue">
@@ -17,7 +20,6 @@
         <div class="current-score">{{ team.value.currentScore }}</div>
       </div>
       <p><strong>Finished At:</strong> {{ team.value.finishedAt | date:'yyyy-MM-dd HH:mm:ss' || 'N/A' }}</p>
-      <p><strong>Current Checkpoint Index:</strong> {{ team.value.curCheckPointIndex }}</p>
       <p><strong>Score Transaction:</strong></p>
       <ul>
         <ng-container *ngFor="let transaction of team.value.scoreTransaction; let rowIndex = index">

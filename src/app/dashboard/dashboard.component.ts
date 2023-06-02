@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { interval } from 'rxjs';
 import { DatePipe } from '@angular/common';
 
+export const API_URL = 'https://pras-th-api.azurewebsites.net';
 
 @Component({
   selector: 'app-dashboard',
@@ -56,7 +57,7 @@ export class DashboardComponent implements OnInit {
 
   fetchGameState(): void {
     // Make an HTTP GET request to the API endpoint
-    this.http.get<GameState>('https://pras-th-api.azurewebsites.net/GameState/Get')
+    this.http.get<GameState>(`${API_URL}/GameState/Get`)
       .subscribe(data => {
 
         // Format the date values using DatePipe

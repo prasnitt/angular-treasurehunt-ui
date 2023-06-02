@@ -1,9 +1,19 @@
 .dashboard {
     padding: 20px;
   }
-  
+  .dashboard-header {
+    position: relative;
+  }
   .game-info {
     margin-bottom: 20px;
+  }
+
+  .dashboard-image {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 300px;
+    height: auto;
   }
   
   .team-info {
