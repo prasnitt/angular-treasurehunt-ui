@@ -7,7 +7,7 @@
   <div class="dashboard-header">
       <div class="game-info">
         <p><strong>Game Name:</strong> {{ gameData.gameName }}</p>
-        <p><strong>Game Code:</strong> {{ gameData.gameCode }}</p>
+        <p><strong>Game Code:</strong> <span class="highlight">{{ gameData.gameCode }}</span></p>
         <p><strong>Started At:</strong> {{ gameData.startedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
         <p><strong>Total Number of Checkpoints:</strong> {{ gameData.totalNumberOfCheckPoints }}</p>
         <p><strong>Updated At:</strong> {{ gameData.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
