@@ -1,6 +1,7 @@
 .dashboard {
     padding: 20px;
     z-index: 1;
+    min-height: 100vh; /* Ensures the container takes up at least the full viewport height */
   }
 
   .top-image-overlay {
@@ -123,4 +124,14 @@
   .negative {
     background-color: red;
     color: white;
+  }
+
+  .developer-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e0c2c2;
+    padding: 10px;
+    text-align: center;
   }
