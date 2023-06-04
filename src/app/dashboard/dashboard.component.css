@@ -134,4 +134,5 @@
     background-color: #e0c2c2;
     padding: 10px;
     text-align: center;
+    z-index: 2;
   }
