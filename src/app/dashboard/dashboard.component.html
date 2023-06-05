@@ -1,43 +1,45 @@
-<div class="dashboard">
-  <h2>Game Dashboard</h2>
-  <div *ngIf="!gameData.isGameStarted" class="top-image-overlay">
-    <img src="assets/img/game-not-started.jpg" alt="Game not started" class="top-image">
-  </div>
+<div class="dashboard-container">
+  <div class="dashboard">
+    <h2>Game Dashboard</h2>
+    <div *ngIf="!gameData.isGameStarted" class="top-image-overlay">
+      <img src="assets/img/game-not-started.jpg" alt="Game not started" class="top-image">
+    </div>
 
-  <div class="dashboard-header">
-      <div class="game-info">
-        <p><strong>Game Name:</strong> {{ gameData.gameName }}</p>
-        <p><strong>Game Code:</strong> <span class="highlight">{{ gameData.gameCode }}</span></p>
-        <p><strong>Started At:</strong> {{ gameData.startedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
-        <p><strong>Total Number of Checkpoints:</strong> {{ gameData.totalNumberOfCheckPoints }}</p>
-        <p><strong>Updated At:</strong> {{ gameData.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
-      </div>
-      <div class="image-container">
-        <img src="assets/img/treasure_hunt_home.jpg" alt="Image" class="dashboard-image">
-      </div>
-      
-  </div>
-  
+    <div class="dashboard-header">
+        <div class="game-info">
+          <p><strong>Game Name:</strong> {{ gameData.gameName }}</p>
+          <p><strong>Game Code:</strong> <span class="highlight">{{ gameData.gameCode }}</span></p>
+          <p><strong>Started At:</strong> {{ gameData.startedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+          <p><strong>Total Number of Checkpoints:</strong> {{ gameData.totalNumberOfCheckPoints }}</p>
+          <p><strong>Updated At:</strong> {{ gameData.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+        </div>
+        <div class="image-container">
+          <img src="assets/img/treasure_hunt_home.jpg" alt="Image" class="dashboard-image">
+        </div>
+        
+    </div>
+    
 
-  <div class="team-info">
-    <div class="team-card" *ngFor="let team of gameData.teamWiseGameState | keyvalue">
-      <h2 >{{ team.key }} ({{ team.value.teamMemberNames.join(', ') }}) </h2>
-      <div class="current-score-container">
-        <div class="current-score">{{ team.value.currentScore }}</div>
-      </div>
-      <p><strong>Finished At:</strong> {{ team.value.finishedAt | date:'yyyy-MM-dd HH:mm:ss' || 'N/A' }}</p>
-      <p><strong>Score Details:</strong></p>
-      <ul>
-        <ng-container *ngFor="let transaction of team.value.scoreTransaction; let rowIndex = index">
-          <div class="row" [ngClass]="{'highlight': rowIndex === team.value.curCheckPointIndex}">
-            <div class="arrow" *ngIf="rowIndex === team.value.curCheckPointIndex"></div>
-            <div class="row-number">CP {{ rowIndex + 1 }} : </div>
-            <div class="circle" *ngFor="let value of transaction" [ngClass]="{'positive': value > 0, 'negative': value < 0}">
-              {{ value }}
+    <div class="team-info">
+      <div class="team-card" *ngFor="let team of gameData.teamWiseGameState | keyvalue">
+        <h2 >{{ team.key }} ({{ team.value.teamMemberNames.join(', ') }}) </h2>
+        <div class="current-score-container">
+          <div class="current-score">{{ team.value.currentScore }}</div>
+        </div>
+        <p><strong>Finished At:</strong> {{ team.value.finishedAt | date:'yyyy-MM-dd HH:mm:ss' || 'N/A' }}</p>
+        <p><strong>Score Details:</strong></p>
+        <ul>
+          <ng-container *ngFor="let transaction of team.value.scoreTransaction; let rowIndex = index">
+            <div class="row" [ngClass]="{'highlight': rowIndex === team.value.curCheckPointIndex}">
+              <div class="arrow" *ngIf="rowIndex === team.value.curCheckPointIndex"></div>
+              <div class="row-number">CP {{ rowIndex + 1 }} : </div>
+              <div class="circle" *ngFor="let value of transaction" [ngClass]="{'positive': value > 0, 'negative': value < 0}">
+                {{ value }}
+              </div>
             </div>
-          </div>
-        </ng-container>
-      </ul>
+          </ng-container>
+        </ul>
+      </div>
     </div>
   </div>
 

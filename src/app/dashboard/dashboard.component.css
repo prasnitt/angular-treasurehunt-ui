@@ -1,7 +1,14 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .dashboard {
-    padding: 20px;
+    padding: 0px;
     z-index: 1;
-    min-height: 100vh; /* Ensures the container takes up at least the full viewport height */
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 50px;
   }
 
   .top-image-overlay {
@@ -128,7 +135,7 @@
   }
 
   .developer-footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
