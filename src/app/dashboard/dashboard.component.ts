@@ -31,7 +31,8 @@ export class DashboardComponent implements OnInit {
         curCheckPointIndex: 0,
         scoreTransaction: [
           [0],
-        ]
+        ],
+        teamMemberNames: [],
       },
       TeamB: {
         currentScore: 0,
@@ -39,7 +40,8 @@ export class DashboardComponent implements OnInit {
         curCheckPointIndex: 0,
         scoreTransaction: [
           [0],
-        ]
+        ],
+        teamMemberNames: []
       }
     }
   };

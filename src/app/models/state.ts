@@ -3,6 +3,7 @@ export interface TeamGameState {
     finishedAt: string | null;
     curCheckPointIndex: number;
     scoreTransaction: (number[])[];
+    teamMemberNames: string[];
   }
   
 export interface GameState {

@@ -21,7 +21,7 @@
 
   <div class="team-info">
     <div class="team-card" *ngFor="let team of gameData.teamWiseGameState | keyvalue">
-      <h3>{{ team.key }}</h3>
+      <h2 >{{ team.key }} ({{ team.value.teamMemberNames.join(', ') }}) </h2>
       <div class="current-score-container">
         <div class="current-score">{{ team.value.currentScore }}</div>
       </div>
