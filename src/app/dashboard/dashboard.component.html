@@ -26,12 +26,12 @@
         <div class="current-score">{{ team.value.currentScore }}</div>
       </div>
       <p><strong>Finished At:</strong> {{ team.value.finishedAt | date:'yyyy-MM-dd HH:mm:ss' || 'N/A' }}</p>
-      <p><strong>Score Transaction:</strong></p>
+      <p><strong>Score Details:</strong></p>
       <ul>
         <ng-container *ngFor="let transaction of team.value.scoreTransaction; let rowIndex = index">
           <div class="row" [ngClass]="{'highlight': rowIndex === team.value.curCheckPointIndex}">
             <div class="arrow" *ngIf="rowIndex === team.value.curCheckPointIndex"></div>
-            <div class="row-number">{{ rowIndex + 1 }}</div>
+            <div class="row-number">CP {{ rowIndex + 1 }} : </div>
             <div class="circle" *ngFor="let value of transaction" [ngClass]="{'positive': value > 0, 'negative': value < 0}">
               {{ value }}
             </div>

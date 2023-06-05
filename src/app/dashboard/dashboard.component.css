@@ -62,7 +62,8 @@
   }
   
   .row-number {
-    width: 30px;
+    width: 80px;
+    font-size: 20px;
     text-align: center;
     font-weight: bold;
   }
