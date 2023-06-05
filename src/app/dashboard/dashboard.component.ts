@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { interval } from 'rxjs';
 import { DatePipe } from '@angular/common';
 
+//export const API_URL = 'https://localhost:7124';
 export const API_URL = 'https://pras-th-api.azurewebsites.net';
 
 @Component({
@@ -56,6 +57,10 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  getCurrentYear(): number {
+    return new Date().getFullYear();
+  }
+
   fetchGameState(): void {
     // Make an HTTP GET request to the API endpoint
     this.http.get<GameState>(`${API_URL}/GameState/Get`)
@@ -66,7 +71,6 @@ export class DashboardComponent implements OnInit {
         data.startedAt = this.datePipe.transform(data.startedAt, 'yyyy-MM-dd HH:mm:ss');
         data.teamWiseGameState.TeamA.finishedAt = this.datePipe.transform(data.teamWiseGameState.TeamA.finishedAt, 'yyyy-MM-dd HH:mm:ss');
         data.teamWiseGameState.TeamB.finishedAt = this.datePipe.transform(data.teamWiseGameState.TeamB.finishedAt, 'yyyy-MM-dd HH:mm:ss');
-
 
         // Update the gameData property with the fetched data
         this.gameData = data;
